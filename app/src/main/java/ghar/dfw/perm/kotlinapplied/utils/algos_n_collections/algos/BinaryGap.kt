@@ -14,7 +14,7 @@ class BinaryGap {
             var fromIni10: Int
             var toIni01: Int
             val processList = ArrayList<String>()
-            val newInputList = ArrayList<String>()
+            val nextInputList = ArrayList<String>()
             val binGap =  ArrayList<Int>()
             gapsStack = ArrayDeque<Int>()
 
@@ -24,7 +24,7 @@ class BinaryGap {
                         fromIni10 = it.indexOf("10")
                         toIni01 = it.indexOf("01")
                         processList.add(it.substring(fromIni10, toIni01 + 2))
-                        newInputList.add(it.substring(toIni01 + 1))
+                        nextInputList.add(it.substring(toIni01 + 1))
                     } else {
                         return null
                     }
@@ -35,9 +35,9 @@ class BinaryGap {
                         gapsList.add(binGap[0])             // current implementation is good with input-list of size = 1
                         gapsStack.addFirst(binGap[0])       // does not add
                     }
-                    println("bin-input, gap, nextArray $binList, $binGap, $newInputList")
+                    println("bin-input, gap, nextArray $binList, $binGap, $nextInputList")
                 }
-            findBinaryGap(newInputList)
+            findBinaryGap(nextInputList)
             return gapsList
         }
 
