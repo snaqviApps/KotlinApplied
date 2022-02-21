@@ -8,6 +8,7 @@ import ghar.dfw.perm.kotlinapplied.component.DaggerCarComponent
 import ghar.dfw.perm.kotlinapplied.utils.Car
 import ghar.dfw.perm.kotlinapplied.utils.algos_n_collections.algos.ArrayEquilibriumPoint
 import ghar.dfw.perm.kotlinapplied.utils.algos_n_collections.algos.BinaryGap
+import ghar.dfw.perm.kotlinapplied.utils.algos_n_collections.algos.Miscellanea
 import ghar.dfw.perm.kotlinapplied.utils.algos_n_collections.sequences.Sequencing
 import java.util.*
 
@@ -150,8 +151,10 @@ class RoutinesActivity : AppCompatActivity() {
 
         // fibonacci approach with Sequences
         println("\n-----------fibo---------------")
-        println("fibo: ${BinaryGap.fibonacci().take(5).toList()}")
-
+        println("fibo: ${Miscellanea.fibonacci().take(5).toList()}")
+        // Check Palindrome
+        val inputStrPalindrome = "pBHcHiiHChbP"
+        println("input: ${inputStrPalindrome.lowercase()}, Check-Palindrome:  ${Miscellanea.checkPalindrome(inputStrPalindrome)}")
         println("\n--------------binary gap---------------")
         val inputDecimal = 2021
 //        val inputArrayToBinaryGap = intArrayOf(0, 33, 929, 1325)  // arguments will prevail that finishes first
