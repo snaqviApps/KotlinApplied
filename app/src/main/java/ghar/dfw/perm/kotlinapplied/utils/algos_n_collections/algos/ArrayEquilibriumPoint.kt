@@ -8,7 +8,6 @@ class ArrayEquilibriumPoint {
         var sum = 0
         var leftSum = 0
         var rightSum = 0
-
         for (i in arrayInt) {
             sum += i
         }

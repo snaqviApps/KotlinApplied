@@ -135,7 +135,6 @@ class RoutinesActivity : AppCompatActivity() {
             i + 5
             println("five plus in array: ${i.toLong()}")
         }
-
         // dynamic array
         val vStr: Vector<String> = Vector<String>()
         for (i in 0..2) vStr.add(i.toString())
@@ -149,14 +148,8 @@ class RoutinesActivity : AppCompatActivity() {
         carsStack.push(Car("black", "Suzuki", 2021))
         carsStack.forEach { print("stacking prints: ${it}") }
 
-        // fibonacci approach with Sequences
-        println("\n-----------fibo---------------")
-        println("fibo: ${Miscellanea.fibonacci().take(5).toList()}")
-        // Check Palindrome
-        val inputStrPalindrome = "pBHcHiiHChbP"
-        println("input: ${inputStrPalindrome.lowercase()}, Check-Palindrome:  ${Miscellanea.checkPalindrome(inputStrPalindrome)}")
         println("\n--------------binary gap---------------")
-        val inputDecimal = 2021
+        val inputDecimal = 132
 //        val inputArrayToBinaryGap = intArrayOf(0, 33, 929, 1325)  // arguments will prevail that finishes first
         val inputArrayToBinaryGap = intArrayOf(inputDecimal)
         val bList = sequencing.toSequence(inputArrayToBinaryGap.toMutableList())
@@ -165,6 +158,27 @@ class RoutinesActivity : AppCompatActivity() {
         bList.forEach { println("Decimal input: $inputDecimal\tbinary extracted: $it") }
         val gaps = BinaryGap.findBinaryGap(bList.toMutableList())
         println("binary-gap: ${gaps?.maxOrNull()}")
+
+        // fibonacci approach with Sequences
+        println("\n-----------fibo---------------")
+        println("fibo: ${Miscellanea.fibonacci().take(7).toList()}")
+        // Check Palindrome
+        val inputStrPalindrome = "pBHcHiiHChbP"
+        println(
+            "input: ${inputStrPalindrome.lowercase()}, Check-Palindrome:  ${
+                Miscellanea.checkPalindrome(
+                    inputStrPalindrome
+                )
+            }"
+        )
+        // Array Rotation
+        println("\n--------------array rotation---------------")
+        val inputArray = intArrayOf(2, 3, 4, 17)
+        val rotationCounts = 3
+        println("input array: ${inputArray.toList()}\trotation counter: $rotationCounts")
+        val outputArray =
+            Miscellanea.rotateRightArraysNTimes(inputArray.toTypedArray(), rotationCounts)
+        println("rotated final array: ${outputArray?.toList()}")
     }
 
 }
