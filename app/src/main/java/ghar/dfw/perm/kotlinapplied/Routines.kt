@@ -6,19 +6,49 @@ import androidx.appcompat.app.AppCompatActivity
 import ghar.dfw.perm.kotlinapplied.book.UppedNames
 import ghar.dfw.perm.kotlinapplied.component.DaggerCarComponent
 import ghar.dfw.perm.kotlinapplied.utils.Car
-import ghar.dfw.perm.kotlinapplied.utils.algos_n_collections.algos.ArrayEquilibriumPoint
-import ghar.dfw.perm.kotlinapplied.utils.algos_n_collections.algos.BinaryGap
-import ghar.dfw.perm.kotlinapplied.utils.algos_n_collections.algos.Miscellanea
 import ghar.dfw.perm.kotlinapplied.utils.algos_n_collections.sequences.Sequencing
+import ghar.dfw.perm.kotlinapplied.utils.algos_n_collections.algos.*
 import java.util.*
+import kotlin.collections.HashSet
 
-class RoutinesActivity : AppCompatActivity() {
-
-    private var intArr = mutableListOf<Int>()
-    private var intArrT = mutableListOf<Int>()
+class RoutinesActivity : AppCompatActivity()  {
 
     private lateinit var queue: Queue<Car>
 
+    // 2D Array Traverse Example: input data
+    /**
+     * using @InterviewSolutionsOne
+     */
+    val logs1 = arrayOf(
+        arrayOf("58523", "user_1", "resource_1"),
+        arrayOf("62314", "user_2", "resource_2"),
+        arrayOf("54001", "user_1", "resource_3"),
+        arrayOf("200", "user_6", "resource_5"),
+        arrayOf("215", "user_6", "resource_4"),
+        arrayOf("54060", "user_2", "resource_3"),
+        arrayOf("53760", "user_3", "resource_3"),
+        arrayOf("58522", "user_22", "resource_1"),
+        arrayOf("53651", "user_5", "resource_3"),
+        arrayOf("2", "user_6", "resource_1"),
+        arrayOf("100", "user_6", "resource_6"),
+        arrayOf("400", "user_7", "resource_2"),
+        arrayOf("100", "user_8", "resource_6"),
+        arrayOf("54359", "user_1", "resource_3")
+    )
+
+    val logs2 = arrayOf(
+        arrayOf("300", "user_1", "resource_3"),
+        arrayOf("599", "user_1", "resource_3"),
+        arrayOf("900", "user_1", "resource_3"),
+        arrayOf("1199", "user_1", "resource_3"),
+        arrayOf("1200", "user_1", "resource_3"),
+        arrayOf("1201", "user_1", "resource_3"),
+        arrayOf("1202", "user_1", "resource_3")
+    )
+
+    val logs3 = arrayOf(
+        arrayOf("300", "user_10", "resource_5")
+    )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,6 +57,24 @@ class RoutinesActivity : AppCompatActivity() {
         queue = LinkedList()
         queue.add(Car("black", "Honda", 1994))
         queue.add(Car("brisk-red", "Toyota", 2009))
+
+        /** 2D array finding max time span */
+//        val interviewSolutionsOne = InterviewSolutionsOne()
+//        val sortedArr = interviewSolutionsOne.findTimeSpan(logs1)
+//        sortedArr.forEachIndexed {index, item ->
+//            println("sorted final users:  $index, $item")
+//        }
+        /** 2D array finding max time span ENDS */
+
+        /** find all characters in given array of Strings in given target string */
+        val strings = mutableListOf("tcabnihjs", "tbcanihjs", "baykkjl", "bbabylkkj","ccc", "breadmaking")
+        val inpArray :Array<String> = arrayOf( "cat", "baby", "dog", "bird", "car", "ax")
+        /** find all characters-match in given array of Strings in given target string ENDS*/
+
+
+        strings.forEach {
+            println("inputString: ${it.toList()},  word found: ${InterviewSolutionsTwo.findEmbeddedWord(inpArray, it.toMutableList())}")
+        }
 
 //        val iArr = intArrayOf(4,2,2, 3,3,3, 4, 5, 78)
 //        val iList = iArr.toList()
@@ -176,9 +224,9 @@ class RoutinesActivity : AppCompatActivity() {
         val inputArray = intArrayOf(2, 3, 4, 17)
         val rotationCounts = 3
         println("input array: ${inputArray.toList()}\trotation counter: $rotationCounts")
-        val outputArray =
-            Miscellanea.rotateRightArraysNTimes(inputArray.toTypedArray(), rotationCounts)
+        val outputArray = Miscellanea.rotateRightArraysNTimes(inputArray.toTypedArray(), rotationCounts)
         println("rotated final array: ${outputArray?.toList()}")
+
     }
 
 }
