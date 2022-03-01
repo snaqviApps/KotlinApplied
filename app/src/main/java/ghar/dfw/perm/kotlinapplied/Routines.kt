@@ -70,7 +70,7 @@ class RoutinesActivity : AppCompatActivity()  {
         val strings = mutableListOf("tcabnihjs", "tbcanihjs", "baykkjl", "bbabylkkj","ccc", "breadmaking")
         val inpArray :Array<String> = arrayOf( "cat", "baby", "dog", "bird", "car", "ax")
         strings.forEach {
-            println("inputString: ${it.toList()},  word found: ${InterviewSolutionsTwo.findEmbeddedWord(inpArray, it.toMutableList())}")
+            println("scrambled String: ${it.toList()}, match-result: ${InterviewSolutionsTwo.findEmbeddedWord(inpArray, it.toMutableList())}")
         }
         /** find all characters-match in given array of Strings in given target string ENDS*/
 

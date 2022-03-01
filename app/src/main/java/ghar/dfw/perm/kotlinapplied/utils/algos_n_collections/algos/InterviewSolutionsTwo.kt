@@ -57,7 +57,7 @@ class InterviewSolutionsTwo {
                     count = 0
                     stringIn = refString.toMutableList()    /** reset to current 'string' for next 'words' entry (it) */
                 }
-            return null
+            return "no match found"
         }
     }
 
