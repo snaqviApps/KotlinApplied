@@ -44,7 +44,7 @@ class InterviewSolutionsTwo {
             val refString: Array<Char> = string.toList().toTypedArray()
             var stringIn = string
             var count = 0
-                words.forEach {
+                words.forEach {                              /** main iterator "it" for 'words' Array */
                     for (w in it) {
                         if(stringIn.contains(w)) {
                             stringIn.remove(w)
@@ -55,7 +55,7 @@ class InterviewSolutionsTwo {
                         return it
                     }
                     count = 0
-                    stringIn = refString.toMutableList()
+                    stringIn = refString.toMutableList()    /** reset to current 'string' for next 'words' entry (it) */
                 }
             return null
         }
