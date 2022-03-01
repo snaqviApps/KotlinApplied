@@ -69,12 +69,11 @@ class RoutinesActivity : AppCompatActivity()  {
         /** find all characters in given array of Strings in given target string */
         val strings = mutableListOf("tcabnihjs", "tbcanihjs", "baykkjl", "bbabylkkj","ccc", "breadmaking")
         val inpArray :Array<String> = arrayOf( "cat", "baby", "dog", "bird", "car", "ax")
-        /** find all characters-match in given array of Strings in given target string ENDS*/
-
-
         strings.forEach {
             println("inputString: ${it.toList()},  word found: ${InterviewSolutionsTwo.findEmbeddedWord(inpArray, it.toMutableList())}")
         }
+        /** find all characters-match in given array of Strings in given target string ENDS*/
+
 
 //        val iArr = intArrayOf(4,2,2, 3,3,3, 4, 5, 78)
 //        val iList = iArr.toList()
