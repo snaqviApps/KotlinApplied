@@ -44,18 +44,20 @@ class InterviewSolutionsTwo {
             val refString: Array<Char> = string.toList().toTypedArray()
             var stringIn = string
             var count = 0
-                words.forEach {                              /** main iterator "it" for 'words' Array */
-                    for (w in it) {
-                        if(stringIn.contains(w)) {
-                            stringIn.remove(w)
-                            count += 1
+                words.forEach {word ->
+
+                        /** main iterator "it" for 'words' Array */
+                        for (letter in word) {
+                            if (stringIn.contains(letter)) {
+                                stringIn.remove(letter)
+                                count += 1
+                            }
                         }
-                    }
-                    if (count == it.length) {
-                        return it
-                    }
-                    count = 0
-                    stringIn = refString.toMutableList()    /** reset to current 'string' for next 'words' entry (it) */
+                        if (count == word.length) {
+                            return word
+                        }
+                        count = 0
+                        stringIn = refString.toMutableList()    /** resets to current 'string' for next 'words' entry (it) */
                 }
             return "no match found"
         }

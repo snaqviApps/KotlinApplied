@@ -1,10 +1,6 @@
 package ghar.dfw.perm.kotlinapplied.utils
 
-import dagger.Module
-import javax.inject.Inject
-
-@Module
-data class Car @Inject constructor(
+data class Car constructor(
     private val _color: String,
     private val _model: String,
     private val _year: Int) {

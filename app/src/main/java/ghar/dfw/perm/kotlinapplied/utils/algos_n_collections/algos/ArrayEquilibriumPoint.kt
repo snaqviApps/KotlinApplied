@@ -2,7 +2,7 @@ package ghar.dfw.perm.kotlinapplied.utils.algos_n_collections.algos
 
 class ArrayEquilibriumPoint {
 
-    fun findEquilibrium(arrayInt : IntArray, arrayLen: Int): Int {
+    fun findEquilibrium(arrayInt : IntArray): Int {
 
         print("input to-be sumed: array entries: ${arrayInt.toList()}\n")
         var sum = 0

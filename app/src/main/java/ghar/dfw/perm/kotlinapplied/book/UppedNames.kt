@@ -1,11 +1,6 @@
 package ghar.dfw.perm.kotlinapplied.book
 
-import dagger.Module
-import javax.inject.Inject
-
-//class UppedNames<T> : ArrayList<T>() {
-@Module
-class UppedNames @Inject constructor()  : ArrayList<String>() {
+class UppedNames : ArrayList<String>() {
     override fun add(element: String): Boolean {
         return super.add(element.uppercase())
     }
